@@ -9,8 +9,10 @@
 
     <link href="{{asset ('fontawesome/css/all.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset ('css/main.css')}}">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <livewire:styles>
 </head>
-<body class="bg-gray-900 font-sans text-white">
+<body class="bg-purple-900 font-sans text-white">
     <nav class="lg:flex border-b border-gray-800">
         <div class="container mx-auto lg:flex items-center justify-between px-4 py-6">
             <ul class="lg:flex items-center">
@@ -24,12 +26,7 @@
                 <li class="lg:ml-6">Actors</li>
             </ul>
             <div class="lg:flex items-center">
-                <div class="relative">
-                    <input type="text" class="bg-gray-800 text-sm rounded-full w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
-                    <div class="absolute top-0">
-                        <i class="fas fa-search text-gray-500 fill-current w-4 mt-2 ml-2"></i>
-                    </div>
-                </div>
+                <livewire:search-dropdown>
                 <div class="lg:ml-4">
                     <a href="#">
                         <img src="{{ asset('images/me.jpg') }}" alt="avatar" class="rounded-full w-8 h-8">
@@ -40,5 +37,6 @@
     </nav>
 
     @yield('content')
+    <livewire:scripts>
 </body>
 </html>
